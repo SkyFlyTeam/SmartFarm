@@ -11,8 +11,6 @@
 
 ### Integrantes
 
-<a href="https://github.com/Marianne10" target="_blank">Mariane</a>
-
 [Mariane Valério Nunes](https://github.com/Marianne10)
 
 [André Salerno](https://github.com/andresalerno)
@@ -30,5 +28,3 @@
 [Guilherme dos Santos Benedito](https://github.com/gui-benedito)
 
 [Arthur Johannes]()
-
----
