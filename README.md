@@ -4,6 +4,12 @@
 ---
 
 ### Orientadores:
+
+- Prof. Jean Carlos Lourenço Costa
+- Prof. Fernando Masanori
+- Prof. Fabricio Galende Marques de Carvalho
+- Profa. Juliana Forin Pasquini Martinez
+
 ---
 
 ### Equipe SkyFly
