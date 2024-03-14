@@ -1,6 +1,6 @@
 [![dependency - flask](https://img.shields.io/badge/dependency-flask-blue?logo=flask&logoColor=white)](https://flask.palletsprojects.com/en/3.0.x/) [![dependency - python](https://img.shields.io/badge/dependency-python-blue?logo=python&logoColor=white)](https://www.python.org/) [![dependency - mysql](https://img.shields.io/badge/dependency-mysql-blue?logo=mysql&logoColor=white)](https://www.mysql.com/)
 
-### **Projeto API**
+### **Aprendizado por Projeto Integrado - API**
 
 ![](./static/img/fatec.jpg)
 ---
