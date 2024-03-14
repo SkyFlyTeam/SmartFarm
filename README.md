@@ -10,7 +10,8 @@
 ---
 
 ### Integrantes
-    - [Mariane Valério Nunes](https://github.com/Marianne10)
+
+[Mariane Valério Nunes](https://github.com/Marianne10)
     - [André Salerno](https://github.com/andresalerno)
     - [Eric Lourenço Mendes da Silva](https://github.com/ericloumendes)
     - [Gustavo Muraoka Silva](https://github.com/gustavomuraoka)
