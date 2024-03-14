@@ -11,6 +11,8 @@
 
 ### Integrantes
 
+<a href="https://github.com/Marianne10" target="_blank">Mariane</a>
+
 [Mariane Valério Nunes](https://github.com/Marianne10)
 
 [André Salerno](https://github.com/andresalerno)
