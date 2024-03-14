@@ -11,20 +11,20 @@
 
 ### Integrantes
 
-[Mariane Valério Nunes](https://github.com/Marianne10)
+[Mariane Valério Nunes](https://github.com/Marianne10) - PO
 
-[André Salerno](https://github.com/andresalerno)
+[André Salerno](https://github.com/andresalerno) - SM
 
-[Eric Lourenço Mendes da Silva](https://github.com/ericloumendes)
+[Eric Lourenço Mendes da Silva](https://github.com/ericloumendes) - ST
 
-[Gustavo Muraoka Silva](https://github.com/gustavomuraoka)
+[Gustavo Muraoka Silva](https://github.com/gustavomuraoka) - ST
 
-[Sarah Montuani Batagioti](https://github.com/SarahBatagioti)
+[Sarah Montuani Batagioti](https://github.com/SarahBatagioti) - ST
 
-[Karen de Cássia Gonçalves](https://github.com/karengoncalves8)
+[Karen de Cássia Gonçalves](https://github.com/karengoncalves8) - ST
 
-[Brenno Rosa Lyrio de Oliveira](https://github.com/BrennoLyrio)
+[Brenno Rosa Lyrio de Oliveira](https://github.com/BrennoLyrio) - ST
 
-[Guilherme dos Santos Benedito](https://github.com/gui-benedito)
+[Guilherme dos Santos Benedito](https://github.com/gui-benedito) - ST
 
-[Arthur Johannes]()
+[Arthur Johannes]() - ST
