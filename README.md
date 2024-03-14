@@ -2,7 +2,7 @@
 
 ### **Projeto API**
 
-![](./static/img/download1.jpg)
+![](./static/img/fatec.jpg)
 ---
 
 ### Orientadores:
