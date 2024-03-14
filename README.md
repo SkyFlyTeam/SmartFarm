@@ -2,7 +2,8 @@
 
 ### **Aprendizado por Projeto Integrado - API**
 
-![](./static/img/fatec.jpg)
+<img src="static/img/Fatec-Logo.png" style="margin-left: auto; margin-right: auto;">
+
 ---
 
 ### Orientadores:
