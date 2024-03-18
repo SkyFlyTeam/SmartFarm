@@ -16,6 +16,43 @@
 ---
 
 ### Equipe SkyFly
+
+---
+
+### Tema do Projeto
+- Smart Farming (sistema para aquisição de dados ambientais)
+
+---
+
+### Desafios:
+- acesso rápido aos dados coletados
+  - dados gravados em cartão SD
+    - Gravados a cada 10 min em formato .csv
+    - Atualmente possui limitação de memória do cartão SD (até 60 dias de registro); não possui escalabilidade
+       - Variáveis:
+         - dia da semana
+         - data
+         - hora
+         - Umidade ambiente e do solo
+         - temperatura
+         - volume de água
+- Avisos de níveis abaixo do padrão
+- Controle manual da iluminação
+
+---
+### Expectativa
+
+- Sistema para demonstrar o estado das variáveis coletadas no interior da câmara, sem a necessidade da retirada do cartão SD
+- Acompanhamento do crescimento da hortaliça
+- Monitoramento do consumo de energia
+  - equipamento: wattímetro
+  - tempo monitorado: 12 dias
+  - Consumo anual na ordem de 166 kwh/ano
+- Acompanhamento das variáveis por gráficos:
+  - pH do solo/dias
+  - coloração das plantas/dias
+  - estado das folhas/dias
+
 ---
 
 ### Prazos
