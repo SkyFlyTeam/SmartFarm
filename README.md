@@ -48,7 +48,7 @@ Sprint | Previsão | Status|
 
 Apresentação das funcionalidades desenvolvidas até o momento:
 
-<[![Smartfarm - demonstration](https://img.youtube.com/vi/bqNpXkbuNLw/0.jpg)](https://youtu.be/bqNpXkbuNLw) -->
+[![Smartfarm - demonstration](https://img.youtube.com/vi/bqNpXkbuNLw/0.jpg)](https://youtu.be/bqNpXkbuNLw)
 
 ## 🛠️ Tecnologias Utilizadas
 
