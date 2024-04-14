@@ -19,9 +19,9 @@
 
 ## 📑 Descrição do Problema
 
-<div style="display: flex; align-items:center; gap:10px">
+<div>
 
-<img src="app/static/img/LogoSmartFarmNav.svg" width="90px" height="90px">
+<img src="app/static/img/LogoSmartFarmNav.svg" width="90px" height="90px" align="left">
 
 <p style="margin-top:15px">O Smart Farm é uma câmera tecnológica que integra um sofisticado sistema de monitoramento de dados ambientais, sendo especialmente projetado para otimizar o cultivo de plantas e hortaliças. Atualmente, a coleta e análise dos dados são realizadas manualmente por meio da aplicação Excel. No entanto, esse método se mostra moroso e exigente para a equipe, além de dificultar o acompanhamento eficaz do desenvolvimento das plantas.
 </p>
@@ -123,4 +123,4 @@ Requisito funcional | Sprint | Prioridade |
 |  Team Member  | Guilherme dos Santos Benedito               |   [![Linkedin Badge](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/guilherme-benedito/) [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/gui-benedito)   |
 |  Team Member  | Arthur Johannes Rodrigues Peres y Peres              |   [![Linkedin Badge](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/ajperes/) [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/ajperes)   |
 
-<img src="app/static/img/FotoTeam.png">
+![image 6](https://github.com/andresalerno/projeto_api/assets/105525498/a7ca2b45-b638-4ae3-a1aa-d4b533acc6ab)
