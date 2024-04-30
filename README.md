@@ -84,22 +84,21 @@ Requisito funcional | Sprint | Prioridade |
 - [x] Elaborar o backlog inicial e o plano de entrega;
 - [x] Integrar os gráficos gerados a partir de um arquivo CSV com a interface do usuário;
 - [x] Empacotar a aplicação com Docker;
-- [x] Criar o vídeo de apresentação.
+- [x] Criar o vídeo de apresentação;
+- [x] Implementar a funcionalidade de importação de arquivos CSV no site;
+- [x] Realizar a transformação automática dos dados em gráficos.
 
 ## Sprint 2. Desenvolvimento do Projeto
-- [ ] Implementar a funcionalidade de importação de arquivos CSV no site;
-- [ ] Criar o esquema do banco de dados para armazenar os dados das variáveis essenciais;
 - [ ] Desenvolver a funcionalidade de importação e conversão automática dos dados do CSV para o banco de dados;
-- [ ] Realizar a transformação automática dos dados em gráficos;
 - [ ] Permitir o download dos dados selecionados;
 - [ ] Implementar a exibição dos últimos dados coletados das variáveis essenciais;
 - [ ] Testar a funcionalidade de apresentação de gráficos e exportação de dados;
-- [ ] Hospedar o website a partir do Raspberry Pi 3.
+- [ ] Hospedar o website a partir do Raspberry Pi 3;
+- [ ] Realizar a adaptação da página web para diferentes dispositivos e tamanhos de tela.
 
 ## Sprint 3. Implementação
 - [ ] Desenvolver a funcionalidade de armazenamento dos dados no banco de dados;
 - [ ] Implementar a seleção de conjuntos de dados e combinações para períodos específicos, incluindo a filtragem de dados;
-- [ ] Realizar a adaptação da página web para diferentes dispositivos e tamanhos de tela;
 - [ ] Testar a responsividade da página e a funcionalidade de filtragem.
 
 ## Sprint 4. Operacionalização
