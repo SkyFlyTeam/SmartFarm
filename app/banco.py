@@ -99,7 +99,6 @@ def obter_valores(dado, pos, default_value=0):
             password=statics.password
         )
         if conn.is_connected():
-            print()
             
             # Preparar a consulta SQL para pegar o último valor da coluna especificada
             query = f"SELECT `{dado}` FROM `{statics.table}` ORDER BY `{statics.db_est_data_hora}` DESC LIMIT {pos},1"
