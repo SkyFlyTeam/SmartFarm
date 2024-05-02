@@ -42,6 +42,9 @@ def criar_banco():
             data_filtrada.reset_index(inplace=True)
             data_filtrada.to_sql(statics.table, con=engine, if_exists='append', index=False, dtype=dtype)
 
+            with engine.connect() as con:
+                con.execute(f"ALTER TABLE `{statics}` ADD PRIMARY KEY (`Data_Hora`);")
+
             # Excluir o arquivo após inserção no banco de dados
             os.remove(file_path)
             print("Arquivo CSV excluído com sucesso.")

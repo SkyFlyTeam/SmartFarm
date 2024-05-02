@@ -41,41 +41,41 @@ def main():
     # Zero on 0
     if dados0 == 0:
         print(dados0, ante0)
-        comp0 = "0,00"
+        comp0 = statics.zero
     else:
         print(round(ante0 / dados0, 2))
-        print("{0:.02f}".format((ante0 / dados0) - 1))
-        comp0 = "{0:.02f}".format((ante0 / dados0) - 1).replace(".", ",")
+        print(statics.data_aprox.format((ante0 / dados0) - 1))
+        comp0 = statics.data_aprox.format((ante0 / dados0) - 1).replace(".", ",")
     # Zero on 1
     if dados1 == 0:
         print(dados1, ante1)
-        comp1 = "0,00"
+        comp1 = statics.zero
     else:
         print(round(ante1 / dados1, 2))
-        print("{0:.02f}".format((ante1 / dados1) - 1))
-        comp1 = "{0:.02f}".format((ante1 / dados1) - 1).replace(".", ",")
+        print(statics.data_aprox.format((ante1 / dados1) - 1))
+        comp1 = statics.data_aprox.format((ante1 / dados1) - 1).replace(".", ",")
     # Zero on 2
     if dados2 == 0:
         print(dados2, ante2)
-        comp2 = "0,00"
+        comp2 = statics.zero
     else:
         print(round(ante2 / dados2))
-        print("{0:.02f}".format((ante2 / dados2) - 1))
-        comp2 = "{0:.02f}".format((ante2 / dados2) - 1).replace(".", ",")
+        print(statics.data_aprox.format((ante2 / dados2) - 1))
+        comp2 = statics.data_aprox.format((ante2 / dados2) - 1).replace(".", ",")
     # Zero on 3
     if dados3 == 0:
         print(dados3, ante3)
-        comp3 = "0,00"
+        comp3 = statics.zero
     else:
         print(round(ante3 / dados3))
-        print("{0:.02f}".format((ante3 / dados3) - 1))
-        comp3 = "{0:.02f}".format((ante3 / dados3) - 1).replace(".", ",")
+        print(statics.data_aprox.format((ante3 / dados3) - 1))
+        comp3 = statics.data_aprox.format((ante3 / dados3) - 1).replace(".", ",")
     
 
     
     # 0
-    if comp0[-4:] == "0,00":
-        comp0 = "0,00"
+    if comp0[statics.zero_rlen:] == statics.zero:
+        comp0 = statics.zero
         ico0 = "neutro"
         res0 = "sem alteração desde a última atualização"
     elif comp0[0] == '-':
@@ -86,8 +86,8 @@ def main():
         res0 = "acima desde a última atualização"
 
     # 1
-    if comp1[-4:] == "0,00":
-        comp1 = "0,00"
+    if comp1[statics.zero_rlen:] == statics.zero:
+        comp1 = statics.zero
         ico1 = "neutro"
         res1 = "sem alteração desde a última atualização"
     elif comp1[0] == '-':
@@ -98,8 +98,8 @@ def main():
         res1 = "acima desde a última atualização"
 
     # 2
-    if comp2[-4:] == "0,00":
-        comp2 = "0,00"
+    if comp2[statics.zero_rlen:] == statics.zero:
+        comp2 = statics.zero
         ico2 = "neutro"
         res2 = "sem alteração desde a última atualização"
     elif comp2[0] == '-':
@@ -110,8 +110,8 @@ def main():
         res2 = "acima desde a última atualização"
 
     # 3
-    if comp3[-4:] == "0,00":
-        comp3 = "0,00"
+    if comp3[statics.zero_rlen:] == statics.zero:
+        comp3 = statics.zero
         ico3 = "neutro"
         res3 = "sem alteração desde a última atualização"
     elif comp3[0] == '-':
