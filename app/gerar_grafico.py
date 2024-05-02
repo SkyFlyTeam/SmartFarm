@@ -3,6 +3,7 @@ from plotly.subplots import make_subplots
 import pandas as pd
 import mysql.connector
 from mysql.connector import Error
+#nosso
 #globals
 import estaticos as statics
 
@@ -29,11 +30,13 @@ def grafico(dado):
                 print("Colunas disponíveis no DataFrame:", data.columns.tolist())
                 raise ValueError(f"O dado '{dado}' não foi encontrado nas colunas do DataFrame.")
             
+
+            # ANTIGO -- JÁ MANIPULADO NA ENTRADA DOS DADOS
             # Conversão de valores, se necessário - Pois não aceita ','
-            if dado == 'Temperatura':
-                data[dado] = data[dado].str.replace(',', '.').astype(float)
-            elif dado == 'Volume Água (L)':
-                data[dado] = pd.to_numeric(data[dado].str.replace(',', '.'), errors='coerce')
+            #if dado == 'Temperatura':
+            #    data[dado] = data[dado].str.replace(',', '.').astype(float)
+            #elif dado == 'Volume Água (L)':
+            #    data[dado] = pd.to_numeric(data[dado].str.replace(',', '.'), errors='coerce')
 
             # ANTIGO -- JÁ FEITO AO ENVIAR PARA O BANCO
             # data = data.sort_values(by='Data_Hora').set_index('Data_Hora')
@@ -45,14 +48,14 @@ def grafico(dado):
             x = data.index.tolist()  # Usar o índice Data_Hora como eixo x
             
             nome_y = ""
-            if dado == "Temperatura":
-                nome_y = "Temperatura °C"
-            elif dado == "Umidade solo":
-                nome_y = "Umidade solo %"
-            elif dado == "Umidade Ambiente":
-                nome_y = "Umidade ambiente %"
+            if dado == statics.db_est_temp:
+                nome_y = statics.txt_title_temp
+            elif dado == statics.db_est_um_solo:
+                nome_y = statics.txt_title_um_solo
+            elif dado == statics.db_est_um_amb:
+                nome_y = statics.txt_title_um_amb
             else:
-                nome_y = "Volume água (ml)"
+                nome_y = statics.txt_title_vol_aq
                 
             # Criação do gráfico
             fig = go.Figure(data=go.Scatter(x=x, y=y, mode='lines', name=dado, line=dict(color='#2e5725')))
@@ -72,46 +75,15 @@ def grafico(dado):
             return div_html
 
     except Error as e:
-        print(f"Erro ao conectar ao MySQL: {e}")
+        print(f"{statics.txt_err_sql_conn}: \n> {e}")
     except Exception as ex:
-        print(f"Erro ao processar os dados: {ex}")
+        print(f"{statics.txt_err_sql_proc}: \n> {ex}")
     finally:
         if conn.is_connected():
             conn.close()
-            print('Conexão ao MySQL encerrada')
+            print(statics.txt_sql_conn_end)
 
-def obter_ultimos_valores(dado, default_value=0):
-    try:
-        # Conexão com o banco de dados MySQL
-        conn = mysql.connector.connect(
-            host=statics.host,
-            database=statics.database,
-            user=statics.username,
-            password=statics.password
-        )
-        if conn.is_connected():
-            print('Conectado ao banco de dados MySQL')
 
-            # Preparar a consulta SQL para pegar o último valor da coluna especificada
-            query = f"SELECT `{dado}` FROM `{statics.table}` ORDER BY Data_Hora DESC LIMIT 1"
-            cursor = conn.cursor()
-            cursor.execute(query)
-            result = cursor.fetchone()
-
-            if result:
-                return result[-1]  # Retorna o último valor
-            else:
-                return default_value  # Retorna o valor padrão se não houver dados
-    except Error as e:
-        print(f"Erro ao conectar ao MySQL: {e}")
-        return default_value
-    except Exception as ex:
-        print(f"Erro ao processar os dados: {ex}")
-        return default_value
-    finally:
-        if conn and conn.is_connected():
-            conn.close()
-            print('Conexão ao MySQL encerrada')
 
 def gerar_tabela():
     try:
@@ -131,46 +103,14 @@ def gerar_tabela():
             data.to_excel("./static/relatorio.xlsx", index=False)     
             
     except Error as e:
-        print(f"Erro ao conectar ao MySQL: {e}")
+        print(f"{statics.txt_err_sql_conn}: \n> {e}")
     except Exception as ex:
-        print(f"Erro ao processar os dados: {ex}")
+        print(f"{statics.txt_err_sql_proc}: \n> {ex}")
     finally:
         if conn.is_connected():
             conn.close()
-            print('Conexão ao MySQL encerrada')
+            print(statics.txt_sql_conn_end)
 
 
 
 
-def comparar_ultimos_valores(dado, default_value=0):
-    try:
-        # Conexão com o banco de dados MySQL
-        conn = mysql.connector.connect(
-            host=statics.host,
-            database=statics.database,
-            user=statics.username,
-            password=statics.password
-        )
-        if conn.is_connected():
-            print('Conectado ao banco de dados MySQL')
-
-            # Preparar a consulta SQL para pegar o último valor da coluna especificada
-            query = f"SELECT `{dado}` FROM `{statics.table}` ORDER BY Data_Hora DESC LIMIT 1,1"
-            cursor = conn.cursor()
-            cursor.execute(query)
-            result = cursor.fetchone()
-
-            if result:
-                return result[-1]  # Retorna o último valor
-            else:
-                return default_value  # Retorna o valor padrão se não houver dados
-    except Error as e:
-        print(f"Erro ao conectar ao MySQL: {e}")
-        return default_value
-    except Exception as ex:
-        print(f"Erro ao processar os dados: {ex}")
-        return default_value
-    finally:
-        if conn and conn.is_connected():
-            conn.close()
-            print('Conexão ao MySQL encerrada')

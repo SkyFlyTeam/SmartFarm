@@ -1,8 +1,9 @@
 from flask import Flask, render_template, send_from_directory, request, redirect
-from gerar_grafico import grafico, gerar_tabela, obter_ultimos_valores, comparar_ultimos_valores
-from banco import criar_banco
 from werkzeug.utils import secure_filename
 import os
+#nosso
+from gerar_grafico import grafico, gerar_tabela
+from banco import criar_banco, obter_valores
 #globals
 import estaticos as statics
 
@@ -10,126 +11,113 @@ import estaticos as statics
 
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = statics.up_folder
+app.config['UPLOAD_FOLDER'] = statics.csv_local_up
 
 
 
 
 @app.route('/')
 def main():
-    dados0 = obter_ultimos_valores("Umidade Ambiente")
-    dados1 = obter_ultimos_valores("Umidade solo")
-    dados2 = obter_ultimos_valores("Temperatura")
-    dados3 = obter_ultimos_valores("Volume Água (L)")
-    # Filtro de 'str' para dados'Z'
-    if type(dados2) is str:
-        dados2 = float(obter_ultimos_valores("Temperatura").replace(",","."))
-    if type(dados3) is str:
-        dados3 = float(obter_ultimos_valores("Volume Água (L)").replace(",","."))
+    dados0 = obter_valores(statics.db_est_um_amb, 0)
+    dados1 = obter_valores(statics.db_est_um_solo, 0)
+    dados2 = obter_valores(statics.db_est_temp, 0)
+    dados3 = obter_valores(statics.db_est_vol_aq, 0)
+    print(dados0, dados1, dados2, dados3)
 
-    ante0 = comparar_ultimos_valores("Umidade Ambiente")
-    ante1 = comparar_ultimos_valores("Umidade solo")
-    ante2 = comparar_ultimos_valores("Temperatura")
-    ante3 = comparar_ultimos_valores("Volume Água (L)")
-    # Filtro de 'str' para ante'Z'
-    if type(ante2) is str:
-        ante2 = float(comparar_ultimos_valores("Temperatura").replace(",","."))
-    if type(ante3) is str:
-        ante3 = float(comparar_ultimos_valores("Volume Água (L)").replace(",","."))
+
+    ante0 = obter_valores(statics.db_est_um_amb, 1)
+    ante1 = obter_valores(statics.db_est_um_solo, 1)
+    ante2 = obter_valores(statics.db_est_temp, 1)
+    ante3 = obter_valores(statics.db_est_vol_aq, 1)
+    print(ante0, ante1, ante2, ante3)
+
+
+    comp0 = statics.zero
+    comp1 = statics.zero
+    comp2 = statics.zero
+    comp3 = statics.zero
 
 
     # Zero on 0
-    if dados0 == 0:
-        print(dados0, ante0)
-        comp0 = statics.zero
-    else:
-        print(round(ante0 / dados0, 2))
-        print(statics.data_aprox.format((ante0 / dados0) - 1))
-        comp0 = statics.data_aprox.format((ante0 / dados0) - 1).replace(".", ",")
+    if dados0 != 0:
+        comp0 = (statics.data_aprox).format((ante0 / dados0) - 1).replace(".", ",")
     # Zero on 1
-    if dados1 == 0:
-        print(dados1, ante1)
-        comp1 = statics.zero
-    else:
-        print(round(ante1 / dados1, 2))
-        print(statics.data_aprox.format((ante1 / dados1) - 1))
-        comp1 = statics.data_aprox.format((ante1 / dados1) - 1).replace(".", ",")
+    if dados1 != 0:
+        comp1 = (statics.data_aprox).format((ante1 / dados1) - 1).replace(".", ",")
     # Zero on 2
-    if dados2 == 0:
-        print(dados2, ante2)
-        comp2 = statics.zero
-    else:
-        print(round(ante2 / dados2))
-        print(statics.data_aprox.format((ante2 / dados2) - 1))
-        comp2 = statics.data_aprox.format((ante2 / dados2) - 1).replace(".", ",")
+    if dados2 != 0:
+        comp2 = (statics.data_aprox).format((ante2 / dados2) - 1).replace(".", ",")
     # Zero on 3
-    if dados3 == 0:
-        print(dados3, ante3)
-        comp3 = statics.zero
-    else:
-        print(round(ante3 / dados3))
-        print(statics.data_aprox.format((ante3 / dados3) - 1))
-        comp3 = statics.data_aprox.format((ante3 / dados3) - 1).replace(".", ",")
+    if dados3 != 0:
+        comp3 = (statics.data_aprox).format((ante3 / dados3) - 1).replace(".", ",")
     
 
     
     # 0
     if comp0[statics.zero_rlen:] == statics.zero:
-        comp0 = statics.zero
-        ico0 = "neutro"
-        res0 = "sem alteração desde a última atualização"
+        comp0 = ""
+        ico0 = statics.svg_neutro
+        res0 = statics.txt_neutro
     elif comp0[0] == '-':
-        ico0 = "negativo"
-        res0 = "abaixo desde a última atualização"
+        comp0+="%"
+        ico0 = statics.svg_negativo
+        res0 = statics.txt_negativo
     else:
-        ico0 = "positivo"
-        res0 = "acima desde a última atualização"
+        comp0+="%"
+        ico0 = statics.svg_positivo
+        res0 = statics.txt_positivo
 
     # 1
     if comp1[statics.zero_rlen:] == statics.zero:
-        comp1 = statics.zero
-        ico1 = "neutro"
-        res1 = "sem alteração desde a última atualização"
+        comp1 = ""
+        ico1 = statics.svg_neutro
+        res1 = statics.txt_neutro
     elif comp1[0] == '-':
-        ico1 = "negativo"
-        res1 = "abaixo desde a última atualização"
+        comp1+="%"
+        ico1 = statics.svg_negativo
+        res1 = statics.txt_negativo
     else:
-        ico1 = "positivo"
-        res1 = "acima desde a última atualização"
+        comp1+="%"
+        ico1 = statics.svg_positivo
+        res1 = statics.txt_positivo
 
     # 2
     if comp2[statics.zero_rlen:] == statics.zero:
-        comp2 = statics.zero
-        ico2 = "neutro"
-        res2 = "sem alteração desde a última atualização"
+        comp2 = ""
+        ico2 = statics.svg_neutro
+        res2 = statics.txt_neutro
     elif comp2[0] == '-':
-        ico2 = "negativo"
-        res2 = "abaixo desde a última atualização"
+        comp2+="%"
+        ico2 = statics.svg_negativo
+        res2 = statics.txt_negativo
     else:
-        ico2 = "positivo"
-        res2 = "acima desde a última atualização"
+        comp2+="%"
+        ico2 = statics.svg_positivo
+        res2 = statics.txt_positivo
 
     # 3
     if comp3[statics.zero_rlen:] == statics.zero:
-        comp3 = statics.zero
-        ico3 = "neutro"
-        res3 = "sem alteração desde a última atualização"
+        comp3 = ""
+        ico3 = statics.svg_neutro
+        res3 = statics.txt_neutro
     elif comp3[0] == '-':
-        ico3 = "negativo"
-        res3 = "abaixo desde a última atualização"
+        comp3+="%"
+        ico3 = statics.svg_negativo
+        res3 = statics.txt_negativo
     else:
-        ico3 = "positivo"
-        res3 = "acima desde a última atualização"
+        comp3+="%"
+        ico3 = statics.svg_positivo
+        res3 = statics.txt_positivo
 
 
     return render_template('index.html', dados0=dados0, dados1=dados1, dados2=dados2, dados3=dados3, comp0=comp0, comp1=comp1, comp2=comp2, comp3=comp3, res0=res0, res1=res1, res2=res2, res3=res3, ico0=ico0, ico1=ico1, ico2=ico2, ico3=ico3)
 
 @app.route('/Graficos')
 def especific():
-    div_html = grafico("Temperatura")
-    div_html1 = grafico("Umidade solo") 
-    div_html2 = grafico("Umidade Ambiente") 
-    div_html3 = grafico("Volume Água (L)") 
+    div_html = grafico(statics.db_est_temp)
+    div_html1 = grafico(statics.db_est_um_solo) 
+    div_html2 = grafico(statics.db_est_um_solo) 
+    div_html3 = grafico(statics.db_est_vol_aq) 
     return render_template('grafico.html', plotly_div=div_html, plotly_div1=div_html1, plotly_div2=div_html2, plotly_div3=div_html3)
 
 
