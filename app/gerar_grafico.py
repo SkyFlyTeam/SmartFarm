@@ -39,23 +39,28 @@ def grafico(dado):
             #    data[dado] = pd.to_numeric(data[dado].str.replace(',', '.'), errors='coerce')
 
             # ANTIGO -- JÁ FEITO AO ENVIAR PARA O BANCO
-            # data = data.sort_values(by='Data_Hora').set_index('Data_Hora')
+            # data = data.sort_values(by=statics.db_est_data_hora).set_index(statics.db_est_data_hora)
             # # Filtrar os dados para ter entradas com pelo menos 10 minutos de diferença
             # data_filtrada = data[~(data.index.to_series().diff() < pd.Timedelta('10min'))]
             
             # Selecionar os dados da coluna desejada
             y = data[dado].to_list()
-            x = data.index.tolist()  # Usar o índice Data_Hora como eixo x
+            x = data[statics.db_est_data_hora].tolist()  # Usar o índice Data_Hora como eixo x
             
             nome_y = ""
+            title = ""
             if dado == statics.db_est_temp:
                 nome_y = statics.txt_title_temp
+                title = statics.txt_title_temp
             elif dado == statics.db_est_um_solo:
                 nome_y = statics.txt_title_um_solo
+                title = statics.txt_title_um_solo
             elif dado == statics.db_est_um_amb:
                 nome_y = statics.txt_title_um_amb
+                title = statics.txt_title_um_amb
             else:
                 nome_y = statics.txt_title_vol_aq
+                title = statics.txt_title_vol_aq
                 
             # Criação do gráfico
             fig = go.Figure(data=go.Scatter(x=x, y=y, mode='lines', name=dado, line=dict(color='#2e5725')))
@@ -66,8 +71,20 @@ def grafico(dado):
             fig.update_layout(
                 xaxis_title='Data e Hora',
                 yaxis_title=nome_y,
-                margin=dict(l=20, r=20, t=20, b=20),  # Margens menores para aumentar a área de plotagem
-                autosize=True
+                title=title,
+                margin=dict(l=20, r=20, t=50, b=20),  # Margens menores para aumentar a área de plotagem
+                autosize=True,
+                plot_bgcolor='white',
+                    font=dict(
+                    family='Poppins',  # Definir a família da fonte global do gráfico
+                    size=12,        # Definir o tamanho da fonte global do gráfico
+                    color='black'   # Definir a cor do texto global do gráfico
+                ),
+                yaxis=dict(
+                    showgrid=True,  # Exibir linhas de grade no eixo Y
+                    gridcolor='lightgray',  # Cor das linhas de grade no eixo Y
+                    gridwidth=1,  # Largura das linhas de grade no eixo Y
+                )
             )
 
             config = {'displayModeBar': False, 'responsive': True}

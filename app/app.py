@@ -116,7 +116,7 @@ def main():
 def especific():
     div_html = grafico(statics.db_est_temp)
     div_html1 = grafico(statics.db_est_um_solo) 
-    div_html2 = grafico(statics.db_est_um_solo) 
+    div_html2 = grafico(statics.db_est_um_amb) 
     div_html3 = grafico(statics.db_est_vol_aq) 
     return render_template('grafico.html', plotly_div=div_html, plotly_div1=div_html1, plotly_div2=div_html2, plotly_div3=div_html3)
 
