@@ -3,13 +3,17 @@
 {% block head %}
 {{ super() }}
 <style type="text/css">
-    a:first-child {
-        color: white;
-        border-bottom: 2px solid #ffffff;
-        padding-bottom: 1px;
+    #link-Inicio {
+        color: rgb(255, 255, 255) !important;
+        border-bottom: 2px solid #ffffff !important;
+        padding-bottom: 1px !important;
     }
-    body{
-        overflow-y: hidden;
+
+    @media (max-width: 768px) {
+        #link-Inicio{
+        color: #44762B !important;
+        border-bottom: 2px solid #44762B!important;
+    }
     }
 </style>
 {% endblock %}
@@ -26,41 +30,41 @@
     <div class="cardflex">
         <div class="cardbox">
             <img class="icon" src="../static/img/ambiente.svg" alt="">
-            <p>Umidade do ambiente</p>
-            <h1>{{ dados0 }} a</h1>
+            <p><strong> Umidade do ambiente </strong></p>
+            <h1>2,1 a</h1>
             <div class="dados">
-                <img class="graphic" src="{{ ico0 }}" alt="">
-                <p><strong>{{ comp0 }}</strong> {{ res0 }}</p>
+                <img class="graphic" src="../static/img/positivo.svg" alt="">
+                <p><strong>2,5%</strong> acima desde a última atualização</p>
             </div>
 
         </div>
         <div class="cardbox">
             <img class="icon" src="../static/img/solo.svg" alt="">
-            <p>Umidade do solo</p>
-            <h1>{{ dados1 }} a</h1>
+            <p><strong> Umidade do solo</strong></p>
+            <h1>9.6 a</h1>
             <div class="dados">
-                <img class="graphic" src="{{ ico1 }}" alt="">
-                <p><strong>{{ comp1 }}</strong> {{ res1 }}</p>
+                <img class="graphic" src="../static/img/negativo.svg" alt="">
+                <p><strong>2,1%</strong> abaixo desde a última atualização</p>
             </div>
 
         </div>
         <div class="cardbox">
             <img class="icon" src="../static/img/Termometro.svg" alt="">
-            <p>Temperatura</p>
-            <h1>{{ dados2 }}°C</h1>
+            <p><strong> Temperatura </strong></p>
+            <h1> 32°C</h1>
             <div class="dados">
-                <img class="graphic" src="{{ ico2 }}" alt="">
-                <p><strong>{{ comp2 }}</strong> {{ res2 }}</p>
+                <img class="graphic" src="../static/img/positivo.svg" alt="">
+                <p><strong>2,3%</strong> acima desde a última atualização</p>
             </div>
 
         </div>
         <div class="cardbox">
             <img class="icon" src="../static/img/gota.svg" alt="">
-            <p>Volume água</p>
-            <h1>{{ dados3 }}kg/m³</h1>
+            <p> <strong> Volume água </strong></p>
+            <h1> 2kg/m³</h1>
             <div class="dados">
-                <img class="graphic" src="{{ ico3 }}" alt="">
-                <p><strong>{{ comp3 }}</strong> {{ res3 }}</p>
+                <img class="graphic" src="../static/img/positivo.svg" alt="">
+                <p><strong>2,5%</strong> acima desde a última atualização</p>
             </div>
         </div>
     </div>
