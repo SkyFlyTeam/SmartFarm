@@ -12,13 +12,13 @@ import estaticos as statics
 
 
 
-def criar_banco():
+def criar_banco(file_path):
     try:
         # Conexão com o banco de dados MySQL
         engine = create_engine(f'mysql+pymysql://{statics.username}:{statics.password}@{statics.host}/{statics.database}')
 
         # Caminho do arquivo CSV
-        file_path = "./uploads/Dados.csv"
+        #file_path = "./uploads/Dados.csv"
 
         # Carregar dados do CSV
         if os.path.exists(file_path):

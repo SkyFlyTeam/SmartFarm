@@ -18,6 +18,11 @@ app.config['UPLOAD_FOLDER'] = statics.csv_local_up
 
 @app.route('/')
 def main():
+    datahora = str(obter_valores(statics.db_est_data_hora, 0))
+    data = datahora[8:10]+ "/" +datahora[5:7]
+    hora = datahora[11:16]
+
+
     dados0 = obter_valores(statics.db_est_um_amb, 0)
     dados1 = obter_valores(statics.db_est_um_solo, 0)
     dados2 = obter_valores(statics.db_est_temp, 0)
@@ -110,7 +115,7 @@ def main():
         res3 = statics.txt_positivo
 
 
-    return render_template('index.html', dados0=dados0, dados1=dados1, dados2=dados2, dados3=dados3, comp0=comp0, comp1=comp1, comp2=comp2, comp3=comp3, res0=res0, res1=res1, res2=res2, res3=res3, ico0=ico0, ico1=ico1, ico2=ico2, ico3=ico3)
+    return render_template('index.html', data=data, hora=hora, dados0=dados0, dados1=dados1, dados2=dados2, dados3=dados3, comp0=comp0, comp1=comp1, comp2=comp2, comp3=comp3, res0=res0, res1=res1, res2=res2, res3=res3, ico0=ico0, ico1=ico1, ico2=ico2, ico3=ico3)
 
 @app.route('/Graficos')
 def especific():
@@ -144,7 +149,7 @@ def upload_file():
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(filepath)
         print(f"Arquivo salvo em: {filepath}")
-        criar_banco()
+        criar_banco(filepath)
         return redirect('/')
     
 
