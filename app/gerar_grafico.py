@@ -113,9 +113,32 @@ def gerar_tabela():
             password=statics.password
         )
         if conn.is_connected():
+            print(statics.txt_sql_conn_init)
             # Carregar dados diretamente em um DataFrame do pandas
             query = f"SELECT * FROM `{statics.table}`"
             data = pd.read_sql(query, conn)
+            print(data)
+
+            data[statics.csv_data] = data[statics.db_est_data_hora].apply(str).str.slice(stop=10)
+            data[statics.csv_hora] = data[statics.db_est_data_hora].apply(str).str.slice(start=11, stop=16)
+            data = data.drop(columns=[statics.db_est_data_hora])
+
+            data = data.rename(columns={
+                    statics.db_est_um_solo : statics.csv_um_solo, 
+                    statics.db_est_um_amb : statics.csv_um_amb,
+                    statics.db_est_temp : statics.csv_temp,
+                    statics.db_est_vol_aq : statics.csv_vol_aq 
+                })
+
+            data = data[[
+                statics.csv_data,
+                statics.csv_hora,
+                statics.csv_um_solo, 
+                statics.csv_um_amb,
+                statics.csv_temp,
+                statics.csv_vol_aq 
+                ]]
+
             print(data)
             # Geração do arquivo Excel sem incluir 'Data_Hora' como índice
             data.to_excel("./uploads/relatorio.xlsx", index=False)     
