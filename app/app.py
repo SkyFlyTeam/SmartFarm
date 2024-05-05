@@ -39,17 +39,17 @@ def main():
 
 
     # Zero on 0
-    if dados0 != 0:
-        comp0 = (statics.data_aprox).format((ante0 / dados0) - 1).replace(".", ",")
+    if ante0 != 0:
+        comp0 = (statics.data_aprox).format((dados0 / ante0) - 1).replace(".", ",")
     # Zero on 1
-    if dados1 != 0:
-        comp1 = (statics.data_aprox).format((ante1 / dados1) - 1).replace(".", ",")
+    if ante1 != 0:
+        comp1 = (statics.data_aprox).format((dados1 / ante1) - 1).replace(".", ",")
     # Zero on 2
-    if dados2 != 0:
-        comp2 = (statics.data_aprox).format((ante2 / dados2) - 1).replace(".", ",")
+    if ante2 != 0:
+        comp2 = (statics.data_aprox).format((dados2 / ante2) - 1).replace(".", ",")
     # Zero on 3
-    if dados3 != 0:
-        comp3 = (statics.data_aprox).format((ante3 / dados3) - 1).replace(".", ",")
+    if ante3 != 0:
+        comp3 = (statics.data_aprox).format((dados3 / ante3) - 1).replace(".", ",")
     
 
     
