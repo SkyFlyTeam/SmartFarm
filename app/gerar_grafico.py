@@ -3,6 +3,7 @@ from plotly.subplots import make_subplots
 import pandas as pd
 import mysql.connector
 from mysql.connector import Error
+from sqlalchemy import create_engine
 #nosso
 #globals
 import estaticos as statics
@@ -117,7 +118,7 @@ def gerar_tabela():
             data = pd.read_sql(query, conn)
             print(data)
             # Geração do arquivo Excel sem incluir 'Data_Hora' como índice
-            data.to_excel("./static/relatorio.xlsx", index=False)     
+            data.to_excel("./uploads/relatorio.xlsx", index=False)     
             
     except Error as e:
         print(f"{statics.txt_err_sql_conn}: \n> {e}")
@@ -127,7 +128,3 @@ def gerar_tabela():
         if conn.is_connected():
             conn.close()
             print(statics.txt_sql_conn_end)
-
-
-
-

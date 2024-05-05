@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_from_directory, request, redirect
+from flask import Flask, render_template, send_file, request, redirect
 from werkzeug.utils import secure_filename
 import os
 #nosso
@@ -120,11 +120,13 @@ def especific():
     div_html3 = grafico(statics.db_est_vol_aq) 
     return render_template('grafico.html', plotly_div=div_html, plotly_div1=div_html1, plotly_div2=div_html2, plotly_div3=div_html3)
 
-
-@app.route('/Baixar', methods=['GET', 'POST'])
-def tabela():
-    gerar_tabela()
-    return send_from_directory(directory='static', path='relatorio.xlsx', as_attachment=True) 
+@app.route('/Baixar')
+def baixar_relatorio():
+    try:
+        gerar_tabela()
+        return send_file("./uploads/relatorio.xlsx", as_attachment=True)
+    except Exception as e:
+        return str(e), 500 
 
 
 
