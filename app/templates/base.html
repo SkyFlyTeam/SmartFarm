@@ -45,19 +45,13 @@
                         </li>
                     </ul>
                     <div class="d-flex">
-                        <!-- <form method="POST" action="#" class="form_post" enctype="multipart/form-data">
-                            <button type="button" class="btn btn-light" value="Importar">
-                                <img id="Importar" src="/static/img/importar.svg" alt=""> Importar
-                            </button>
-                        </form> -->
                         <form action = "/Importar" method = "POST" enctype="multipart/form-data">
-                            <div class="InputFile">
+                            <div class="InputFile btn btn-light">
                                 <input type="file"  value="Importar" name="arquivo_csv" accept=".csv" onchange="form.submit()">
                                 <label for="fileInput">
-                                    <img id="Importar" src="/static/img/importar.svg" alt="">
+                                    <img id="Importar" src="/static/img/importar.svg" alt="" style="width: 0.8rem;">
                                     Importar
                                 </label>
-                                
                             </div>
                         </form>
                         <form action="/Baixar" method="GET">
