@@ -15,7 +15,7 @@ volume_reg double not null
 
 
 CREATE TABLE IF NOT EXISTS Estufa(
-    est_dh datetime not null primary key,
+    est_dh datetime not null,
     est_um_solo double not null,
     est_um_amb double not null,
     est_temp double not null,
