@@ -1,28 +1,22 @@
 version: "2"
 services:
   app:
-    build: ./app
+    image: ericloumendes/smart-farm-arm64:1.0
     links:
       - db
     ports:
       - "5000:5000"
     depends_on:
       - db
-      - adminer
 
   db:
-    image: mysql:5.7
+    container_name: db
+    image: mysql
+    restart: always
     ports:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
     volumes:
-      - ./db:/docker-entrypoint-initdb.d/:ro
-
-  adminer:
-    container_name: adminer
-    image: adminer
-    restart: always
-    ports:
-      - '8080:8080'
-  
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./db/data:/var/lib/mysql

@@ -9,11 +9,33 @@
         padding-bottom: 1px !important;
     }
 
-    @media (max-width: 991px) {
-        #link-Inicio{
-        color: #71A334 !important;
-        border-bottom: 2px solid #71A334!important;
+    body {
+        overflow-y: hidden;
     }
+
+    footer {
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+    }
+
+    @media (max-width: 991px) {
+        #link-Inicio {
+            color: #71A334 !important;
+            border-bottom: 2px solid #71A334 !important;
+        }
+
+        body {
+            overflow-y: scroll;
+        }
+
+        footer {
+            position: static !important;
+            width: 100% !important;
+            display: flex !important;
+            align-items: flex-end !important;
+            margin-top: 2rem !important;
+        }
     }
 </style>
 {% endblock %}
@@ -29,7 +51,7 @@
     </div>
     <div class="cardflex">
         <div class="cardbox">
-            <img class="icon" src="../static/img/ambiente.svg" alt="">
+            <img class="iconParametro" src="../static/img/ambiente.svg" alt="">
             <p><strong> Umidade do ambiente </strong></p>
             <h1>{{ dados0 }} a</h1>
             <div class="dados">
@@ -39,7 +61,7 @@
 
         </div>
         <div class="cardbox">
-            <img class="icon" src="../static/img/solo.svg" alt="">
+            <img class="iconParametro" src="../static/img/solo.svg" alt="">
             <p><strong> Umidade do solo</strong></p>
             <h1>{{ dados1 }} a</h1>
             <div class="dados">
@@ -49,7 +71,7 @@
 
         </div>
         <div class="cardbox">
-            <img class="icon" src="../static/img/Termometro.svg" alt="">
+            <img class="iconParametro" src="../static/img/Termometro.svg" alt="">
             <p><strong> Temperatura </strong></p>
             <h1> {{ dados2 }}°C</h1>
             <div class="dados">
@@ -59,7 +81,7 @@
 
         </div>
         <div class="cardbox">
-            <img class="icon" src="../static/img/gota.svg" alt="">
+            <img class="iconParametro" src="../static/img/gota.svg" alt="">
             <p> <strong> Volume água </strong></p>
             <h1> {{ dados3 }}kg/m³</h1>
             <div class="dados">

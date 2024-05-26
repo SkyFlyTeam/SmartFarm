@@ -31,35 +31,29 @@
 </style>
 {% endblock %} {% block content %}
 <main>
-  <form class="filtro" method="get" action="/obter-dados">
+  <form class="filtro" method="GET" action="/Graficos">
     <h1>Filtro</h1>
     <div class="forms">
-      <div class="inputItem">
-        <label for="DataInicio">Data de início:</label>
-        <label for="DataInicio" id="label-SmallScreen">De</label>
-        <input type="date" name="DataInicio" id="Datas" readonly />
-      </div>
-      <div class="inputItem">
-        <label for="DataTermino">Data de término:</label>
-        <label for="DataInicio" id="label-SmallScreen">até</label>
-        <input type="date" name="DataTermino" id="Datas" readonly/>
-      </div>
-      <div class="botoesFiltro">
-        <button type="button" class="btn" id="Limpar">
-          <img id="IconExclude" src="/static/img/ExcludeIcon.svg" alt="" />
-          <span>Limpar</span>
-        </button>
-        <button
-          type="button"
-          class="btn btn-light"
-          value="Filtrar"
-          id="Filtrar"
-        >
-          <img id="IconFiltrar" src="/static/img/filtro.svg" alt="" /><span
-            >Filtrar</span
-          >
-        </button>
-      </div>
+        <div class="inputItem">
+            <label for="DataInicio">Data de início:</label>
+            <label for="DataInicio" id="label-SmallScreen">De</label>
+            <input type="date" name="DataInicio" id="DataInicio" required/>
+        </div>
+        <div class="inputItem">
+            <label for="DataTermino">Data de término:</label>
+            <label for="DataInicio" id="label-SmallScreen">até</label>
+            <input type="date" name="DataTermino" id="DataTermino" required/>
+        </div>
+        <div class="botoesFiltro">
+          <button type="reset" class="btn" id="Limpar">
+            <img id="IconExclude" src="/static/img/ExcludeIcon.svg" alt="" />
+            <span>Limpar</span>
+          </button>
+          <button type="submit" class="btn btn-light">
+            <img src="/static/img/filtro.svg" alt="Filtrar" style="width: 1.3rem;">
+            <span>Filtrar</span>
+          </button>
+        </div>
     </div>
   </form>
 
@@ -70,5 +64,4 @@
     <div class="card">{{ plotly_div3|safe }}</div>
   </div>
 </main>
-
 {% endblock content %}

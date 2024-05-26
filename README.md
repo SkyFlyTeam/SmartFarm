@@ -37,7 +37,7 @@ Sprint | Previsão | Status|
 |------|--------|------|
 |Kick Off | 11/03/2024 a 15/03/2024 | ✔️ concluido|
 |01 | 25/03/2024 a 14/04/2024 | ✔️ concluido|
-|02|  15/04/2024 a 05/05/2024| ✔️ concluido|
+|02|  15/04/2024 a 05/05/2024| a fazer |
 |03| 06/05/2024 a 26/05/2024 | a fazer|
 |04| 27/05/2024 a 16/06/2024 |a fazer |
 |Feira de Soluções| 27/06 |a fazer |
@@ -48,7 +48,7 @@ Sprint | Previsão | Status|
 
 Apresentação das funcionalidades desenvolvidas até o momento:
 
-[![Smartfarm - demonstration](https://img.youtube.com/vi/bqNpXkbuNLw/0.jpg)](https://youtu.be/6sYvwrmlI8I)
+[![Smartfarm - demonstration](https://img.youtube.com/vi/bqNpXkbuNLw/0.jpg)](https://youtu.be/bqNpXkbuNLw)
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -89,12 +89,12 @@ Requisito funcional | Sprint | Prioridade |
 - [x] Realizar a transformação automática dos dados em gráficos.
 
 ## Sprint 2. Desenvolvimento do Projeto
-- [x] Desenvolver a funcionalidade de importação e conversão automática dos dados do CSV para o banco de dados;
-- [x] Permitir o download dos dados selecionados;
-- [x] Implementar a exibição dos últimos dados coletados das variáveis essenciais;
-- [x] Testar a funcionalidade de apresentação de gráficos e exportação de dados;
-- [x] Hospedar o website a partir do Raspberry Pi 3;
-- [x] Realizar a adaptação da página web para diferentes dispositivos e tamanhos de tela.
+- [ ] Desenvolver a funcionalidade de importação e conversão automática dos dados do CSV para o banco de dados;
+- [ ] Permitir o download dos dados selecionados;
+- [ ] Implementar a exibição dos últimos dados coletados das variáveis essenciais;
+- [ ] Testar a funcionalidade de apresentação de gráficos e exportação de dados;
+- [ ] Hospedar o website a partir do Raspberry Pi 3;
+- [ ] Realizar a adaptação da página web para diferentes dispositivos e tamanhos de tela.
 
 ## Sprint 3. Implementação
 - [ ] Desenvolver a funcionalidade de armazenamento dos dados no banco de dados;
