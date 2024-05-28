@@ -48,7 +48,7 @@ Sprint | Previsão | Status|
 
 <br>
 
-<span id="demonstracao">
+<span id="demostracao">
   
 # 💻 Demonstração
 
@@ -56,9 +56,9 @@ Apresentação das funcionalidades desenvolvidas até o momento:
 
 [![Smartfarm - demonstration](https://img.youtube.com/vi/bqNpXkbuNLw/0.jpg)](https://youtu.be/bqNpXkbuNLw)
 
-<span id="tecnlogias">
+<span id="tecnologias">
 
-## 🛠️ Tecnologias Utilizadas
+# 🛠️ Tecnologias Utilizadas
 
 As seguintes ferramentas, linguagens, bibliotecas e tecnologias foram usadas na construção do projeto:
 
@@ -71,6 +71,15 @@ As seguintes ferramentas, linguagens, bibliotecas e tecnologias foram usadas na 
 ![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)
 
 <br>
+
+# 📘 Munual do usuário
+
+Para ter informações de:
+- Processo de instalação
+- Acesso do programa
+- Funções da plataforma
+
+[Acesse aqui!](https://github.com/andresalerno/projeto_api/blob/main/Manual.pdf)
 
 <span id="backlog">
 
