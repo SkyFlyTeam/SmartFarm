@@ -7,11 +7,15 @@
 - Prof. Fabricio Galende Marques de Carvalho
 - Profa. Juliana Forin Pasquini Martinez
 
-<div align="center">
-
-[Sobre](#objetivo-do-projeto) | [Demonstração](#funcionalidades-e-registros-(vídeos-e-apresentações)-das-sprints) | [Backlog do Produto](#Backlog-do-produto) | [Autores](#autores)
-
-</div>
+<p align="center">
+    <a href="#sobre">Sobre o projeto</a>  |  
+    <a href="#demostracao">Demostração</a>  |  
+    <a href="#tecnologias">Tecnologias utilizadas</a>  |  
+    <a href="#backlog">Backlog do produto</a>  |  
+    <a href="#autores">Autores</a>
+</p>
+   
+<span id="sobre">
 
 <br>
 
@@ -39,16 +43,20 @@ Sprint | Previsão | Status|
 |01 | 25/03/2024 a 14/04/2024 | ✔️ concluido |
 |02|  15/04/2024 a 05/05/2024|  ✔️ concluido |
 |03| 06/05/2024 a 26/05/2024 |  ✔️ concluido |
-|04| 27/05/2024 a 16/06/2024 |a fazer |
-|Feira de Soluções| 27/06 |a fazer |
+|04| 27/05/2024 a 16/06/2024 | a fazer |
+|Feira de Soluções| 27/06 | a fazer |
 
 <br>
 
+<span id="demonstracao">
+  
 # 💻 Demonstração
 
 Apresentação das funcionalidades desenvolvidas até o momento:
 
 [![Smartfarm - demonstration](https://img.youtube.com/vi/bqNpXkbuNLw/0.jpg)](https://youtu.be/bqNpXkbuNLw)
+
+<span id="tecnlogias">
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -63,6 +71,8 @@ As seguintes ferramentas, linguagens, bibliotecas e tecnologias foram usadas na 
 ![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)
 
 <br>
+
+<span id="backlog">
 
 # 🧾 Backlog do produto
 
@@ -90,22 +100,30 @@ Requisito funcional | Sprint | Prioridade |
 
 ## Sprint 2. Desenvolvimento do Projeto
 - [x] Desenvolver a funcionalidade de importação e conversão automática dos dados do CSV para o banco de dados;
-- [x] Permitir o download dos dados selecionados;
+- [x] Permitir o download de todos os dados;
 - [x] Implementar a exibição dos últimos dados coletados das variáveis essenciais;
 - [x] Testar a funcionalidade de apresentação de gráficos e exportação de dados;
-- [x] Hospedar o website a partir do Raspberry Pi 3;
+- [x] Desenvolver a funcionalidade de armazenamento dos dados no banco de dados;
 - [x] Realizar a adaptação da página web para diferentes dispositivos e tamanhos de tela.
 
 ## Sprint 3. Implementação
-- [x] Desenvolver a funcionalidade de armazenamento dos dados no banco de dados;
+- [x] Permitir o download dos dados selecionados;
+- [x] Hospedar o website a partir do Raspberry Pi 3;
 - [x] Implementar a seleção de conjuntos de dados e combinações para períodos específicos, incluindo a filtragem de dados;
 - [x] Testar a responsividade da página e a funcionalidade de filtragem.
 
 ## Sprint 4. Operacionalização
+- [ ] Implementar o botão de limpar filtro
+- [ ] Implementar função de baixar por período selecionado pelo filtro
+- [ ] Tratamento do erro de ao filtrar o período deve permanecer no input
+- [ ] Tratamento do erro de filtro de data inexistente no banco
+- [ ] Tratamento do erro de importar dados duplicados
 - [ ] Realizar testes de integração para garantir o funcionamento correto de todas as funcionalidades;
 - [ ] Corrigir eventuais bugs encontrados durante os testes.
 
 <br>
+
+<span id="autores">
 
 # 👥 Autores
 
