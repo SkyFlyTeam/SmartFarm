@@ -1,50 +1,39 @@
-<img src="app/static/img/BannerSkyFly.png" style="margin-left: auto; margin-right: auto;">
+# Sprint 1: 25/03/2024 à 14/04/2024
 
-### Orientadores:
+O projeto se baseia no desenvolvimento de um site para Help Desk, que consiste em um sistema com funcionalidades de gerenciamento de usuários, chamados, geração de relatórios, entre outras ações do contexto. Tendo em mente o MVP, a primeira sprint se deu com a criação de um fluxo básico de criação de usuários, login e listagem de chamados, bem como o acompanhamento desses chamados com sua abertura, análise e fechamento. Para isso, foram levantados e validados os requisitos e o protótipo, construindo os serviços e interfaces visando uma entrega de grande valor condizente com a dor do cliente.
 
-- Prof. Jean Carlos Lourenço Costa
-- Prof. Fernando Masanori
-- Prof. Fabricio Galende Marques de Carvalho
-- Profa. Juliana Forin Pasquini Martinez
+## 🎯 Objetivos 
 
-<p align="center">
-    <a href="#sobre">Sobre o projeto</a>  |  
-    <a href="#demostracao">Demostração</a>  |  
-    <a href="#tecnologias">Tecnologias utilizadas</a>  |  
-    <a href="#backlog">Backlog do produto</a>  |  
-    <a href="#autores">Autores</a>
-</p>
-   
-<span id="sobre">
+ - Definir o propósito do projeto;
+ - Elaborar o protótipo da aplicação;
+ - Escolher a identidade visual;
+ - Configurar o ambiente de desenvolvimento;
+ - Desenvolver a base do website;
+ - Elaborar o backlog inicial e o plano de entrega;
+ - Integrar os gráficos gerados a partir de um arquivo CSV com a interface do usuário;
+ - Empacotar a aplicação com Docker;
+ - Criar o vídeo de apresentação;
+ - Implementar a funcionalidade de importação de arquivos CSV no site;
+ - Realizar a transformação automática dos dados em gráficos.
 
-<br>
+# 🧾 Requisitos Funcionais
 
-# 🔎 Sobre o projeto
+Os requisitos desenvolvidos durante esta sprint foram:
 
-## 📑 Descrição do Problema
-
-<div>
-
-<img src="app/static/img/LogoSmartFarmNav.svg" width="90px" height="90px" align="left">
-
-<p style="margin-top:15px">O Smart Farm é uma câmera tecnológica que integra um sofisticado sistema de monitoramento de dados ambientais, sendo especialmente projetado para otimizar o cultivo de plantas e hortaliças. Atualmente, a coleta e análise dos dados são realizadas manualmente por meio da aplicação Excel. No entanto, esse método se mostra moroso e exigente para a equipe, além de dificultar o acompanhamento eficaz do desenvolvimento das plantas.
-</p>
-</div>
-
-## 🎯 Objetivo  
-
-Desenvolver um painel de visualização que permita o monitoramento constante da estufa através de gráficos e automatizar o processo de coleta e armazenamento de dados,com o intuito de solucionar as problemáticas apresentadas pelo cliente.
-
-## 📅 Entrega de Sprints
-
-Sprint | Previsão | Status|
+Requisito funcional | Sprint | Prioridade |
 |------|--------|------|
-|Kick Off | 11/03/2024 a 15/03/2024 | ✔️ concluido |
-|01 | 25/03/2024 a 14/04/2024 | ✔️ concluido |
-|02|  15/04/2024 a 05/05/2024|  ✔️ concluido |
-|03| 06/05/2024 a 26/05/2024 |  ✔️ concluido |
-|04| 27/05/2024 a 16/06/2024 | a fazer |
-|Feira de Soluções| 27/06 | a fazer |
+| Apresentar os gráficos, incluindo datas e horários de captura. | 1 | Alta |
+| Importar e converter dados de um arquivo CSV. | 1 | Alta |
+| Apresentar os gráficos, incluindo datas e horários de captura.| 1 | Alta |
+
+
+## 📅 Métricas do Time
+
+Utilizamos o Burndown chart para acompanhar o progresso da equipe durante o andamento da sprint (o eixo X são os dias trabalhados na sprint e os valores do eixo Y representam as entregas e esforços realizados com o passar do tempo)
+
+ ![image](https://github.com/user-attachments/assets/abe009e9-32bc-4d4b-a915-9fb990da0ece)
+
+
 
 <br>
 
