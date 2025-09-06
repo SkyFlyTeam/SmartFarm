@@ -43,8 +43,8 @@ Sprint | Previsão | Status|
 |01 | 25/03/2024 a 14/04/2024 | ✔️ concluido |
 |02|  15/04/2024 a 05/05/2024|  ✔️ concluido |
 |03| 06/05/2024 a 26/05/2024 |  ✔️ concluido |
-|04| 27/05/2024 a 16/06/2024 | a fazer |
-|Feira de Soluções| 27/06 | a fazer |
+|04| 27/05/2024 a 16/06/2024 | ✔️ concluido |
+|Feira de Soluções| 27/06 | ✔️ concluido |
 
 <br>
 
@@ -122,13 +122,13 @@ Requisito funcional | Sprint | Prioridade |
 - [x] Testar a responsividade da página e a funcionalidade de filtragem.
 
 ## Sprint 4. Operacionalização
-- [ ] Implementar o botão de limpar filtro
-- [ ] Implementar função de baixar por período selecionado pelo filtro
-- [ ] Tratamento do erro de ao filtrar o período deve permanecer no input
-- [ ] Tratamento do erro de filtro de data inexistente no banco
-- [ ] Tratamento do erro de importar dados duplicados
-- [ ] Realizar testes de integração para garantir o funcionamento correto de todas as funcionalidades;
-- [ ] Corrigir eventuais bugs encontrados durante os testes.
+- [x] Implementar o botão de limpar filtro
+- [x] Implementar função de baixar por período selecionado pelo filtro
+- [x] Tratamento do erro de ao filtrar o período deve permanecer no input
+- [x] Tratamento do erro de filtro de data inexistente no banco
+- [x] Tratamento do erro de importar dados duplicados
+- [x] Realizar testes de integração para garantir o funcionamento correto de todas as funcionalidades;
+- [x] Corrigir eventuais bugs encontrados durante os testes.
 
 <br>
 
