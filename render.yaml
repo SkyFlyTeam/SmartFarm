@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: app
+    plan: free
+    env: docker
+    image: "ericloumendes/smart-farm-arm64:1.0"
+    envVars:
+      - key: MYSQL_HOST
+        fromService:
+          type: web
+          name: db
+          property: host
+      - key: MYSQL_PORT
+        value: "3306"
+    ports:
+      - "5000"
+  - type: web
+    name: db
+    plan: free
+    env: docker
+    image: "mysql:latest"
+    envVars:
+      - key: MYSQL_ROOT_PASSWORD
+        value: root
+    # Note: Free plan may not support persistent volume; using a placeholder
+    # To properly persist data, you'd need a private service with a disk (paid plan).
